@@ -1,32 +1,45 @@
 public class EmpWageBuilder {
     public static void main(String[] args) {
 
-        // UC3 WITH SWITCH CASE
+        // CALCULATE WAGE FOR A MONTH ASSUMING 20 WORKING DAYS
 
         //constants
+        int IS_FULL_TIME = 1;
+        int IS_PART_TIME = 2;
+        int IS_ABSENT = 0;
         int EMP_RATE_PER_HR = 20;
+        int TOTAL_WORKING_DAYS = 20;
 
-        //variables
-        int empWorkingHrs;
+        //variables;
+        int empHrs;
+        int totalEarnings = 0;
         int dailyWage;
+        int empDays = 0;
 
-        int random = (int) (Math.random() * 10) % 3;         // TO GET RANDOM OUTPUT AS 0, 1 OR 2
-        System.out.println(random);
-
-        switch (random) {
-            case 1:
-                System.out.println("Employee is Present FULL TIME.");
-                empWorkingHrs = 8;
-                break;
-            case 2:
-                System.out.println("Employee is Present Part Time.");
-                empWorkingHrs = 4;
-                break;
-            default:
-                System.out.println("Employee is ABSENT.");
-                empWorkingHrs = 0;
+        for (int i = 0; i < TOTAL_WORKING_DAYS; i++) {
+            int random = (int) (Math.random() * 10) % 3;
+            empDays++;
+            switch (random) {
+                case 1:         // EMPLOYEE IS PRESENT FULL TIME
+                    empHrs = 8;
+                    dailyWage = empHrs * EMP_RATE_PER_HR;
+                    totalEarnings = totalEarnings + dailyWage;
+                    System.out.println("Earning on Day " + empDays + " is: " + dailyWage + " and Total Earnings: " + totalEarnings);
+                    break;
+                case 2:         // EMPLOYEE IS PRESENT HALF TIME
+                    empHrs = 4;
+                    dailyWage = empHrs * EMP_RATE_PER_HR;
+                    totalEarnings = totalEarnings + dailyWage;
+                    System.out.println("Earning on Day " + empDays + " is: " + dailyWage + " and Total Earnings: " + totalEarnings);
+                    break;
+                default:            // EMPLOYEE IS ABSENT
+                    empHrs = 0;
+                    dailyWage = empHrs * EMP_RATE_PER_HR;
+                    totalEarnings = totalEarnings + dailyWage;
+                    System.out.println("Earning on Day " + empDays + " is: " + dailyWage + " and Total Earnings: " + totalEarnings);
+                    break;
+            }
         }
-        dailyWage = (EMP_RATE_PER_HR * empWorkingHrs);
-        System.out.println("Employee has worked " + empWorkingHrs + ", hence earned a salary of Rs. " + dailyWage);
+        System.out.println("Employee has earned " + totalEarnings + " in a month");
     }
 }
