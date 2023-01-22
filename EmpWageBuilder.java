@@ -1,6 +1,9 @@
 public class EmpWageBuilder {
     public static void main(String[] args) {
 
+        getDailyWage();
+    }
+    public static void getDailyWage(){
         // CALCULATE WAGE FOR A MONTH ASSUMING 20 WORKING DAYS
 
         //constants
@@ -24,19 +27,19 @@ public class EmpWageBuilder {
                     empHrs = 8;
                     dailyWage = empHrs * EMP_RATE_PER_HR;
                     totalEarnings = totalEarnings + dailyWage;
-                    System.out.println("Earning on Day " + empDays + " is: " + dailyWage + " and Total Earnings: " + totalEarnings);
+                    System.out.println("Earning on Day " + empDays + " is: " + dailyWage );
                     break;
                 case 2:         // EMPLOYEE IS PRESENT HALF TIME
                     empHrs = 4;
                     dailyWage = empHrs * EMP_RATE_PER_HR;
                     totalEarnings = totalEarnings + dailyWage;
-                    System.out.println("Earning on Day " + empDays + " is: " + dailyWage + " and Total Earnings: " + totalEarnings);
+                    System.out.println("Earning on Day " + empDays + " is: " + dailyWage );
                     break;
                 default:            // EMPLOYEE IS ABSENT
                     empHrs = 0;
                     dailyWage = empHrs * EMP_RATE_PER_HR;
                     totalEarnings = totalEarnings + dailyWage;
-                    System.out.println("Earning on Day " + empDays + " is: " + dailyWage + " and Total Earnings: " + totalEarnings);
+                    System.out.println("Earning on Day " + empDays + " is: " + dailyWage );
                     break;
             }
         }
