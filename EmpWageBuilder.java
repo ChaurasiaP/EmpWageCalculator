@@ -45,3 +45,4 @@ public class EmpWageBuilder {
         System.out.println("Employee has earned " + totalEarnings + " in a month");
     }
 }
+// PROGRAM ENDS HERE
